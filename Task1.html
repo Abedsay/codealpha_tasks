@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .gallery-container {
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+        }
+
+        .gallery {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 100%;
+        }
+
+        .gallery-item {
+            min-width: 100%;
+            transition: opacity 0.5s ease;
+            object-fit: contain;
+            height: 500px;
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1;
+            border-radius: 50%;
+            opacity: 0.8;
+        }
+
+        button:hover {
+            opacity: 1;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Gallery</h1>
+    <div class="gallery-container">
+        <div class="gallery">
+            <img src="assets/Skull.jpg" class="gallery-item active">
+            <img src="assets/cod.jpg" class="gallery-item">
+            <img src="assets/mc.png" class="gallery-item">
+            <img src="assets/rdr2.jpg" class="gallery-item">
+        </div>
+        <button class="prev">❮</button>
+        <button class="next">❯</button>
+    </div>
+    <script>
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            const gallery = document.querySelector('.gallery');
+            gallery.style.transform = `translateX(${-index * 100}%)`;
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : galleryItems.length - 1;
+            showImage(currentIndex);
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex < galleryItems.length - 1) ? currentIndex + 1 : 0;
+            showImage(currentIndex);
+        });
+
+        showImage(currentIndex);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,286 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: #f4f4f4;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .section {
+            padding: 4rem 2rem 2rem 2rem;
+            text-align: center;
+            margin-top: 60px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .section h2 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            color: #333;
+            position: relative;
+        }
+
+        .section h2:after {
+            content: "";
+            width: 50px;
+            height: 4px;
+            background: #333;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -10px;
+        }
+
+        #about p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: #666;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .skills-list li {
+            background: #333;
+            color: #fff;
+            margin: 5px;
+            padding: 10px;
+            border-radius: 5px;
+            min-width: 100px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .skills-list li:hover {
+            transform: scale(1.1);
+        }
+
+        .projects-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .project-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 1rem;
+            margin: 10px;
+            width: calc(33% - 20px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .project-card p {
+            color: #666;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #333;
+            color: #fff;
+            margin-top: 2rem;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>Hello! I am Abdullah Jrad, a passionate front-end developer. I enjoy creating user-friendly and visually appealing websites.</p>
+        <p>DOB: 5/MAR/2005</p>
+        <p>Nationality: Palestinian</p>
+        <p>Email: <a href="mailto:abdullah.jrad@lau.edu">abdullah.jrad@lau.edu</a></p>
+        <p>Phone#: +961 81 883 591</p>
+    </section>
+
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>PHP</li>
+            <li>Java</li>
+            <li>Python</li>
+            <li>C</li>
+            <li>C#</li>
+            <li>Unity</li>
+            <li>Git</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3><a href="https://github.com/Abedsay/CPC-Website">CPC - Website</a></h3>
+                <p>A Software Engineering project in which we had to develop an advanced poly-clinic website with adverse functionalities for patients and staff members.</p>
+            </div>
+            <div class="project-card">
+                <h3><a href="https://github.com/Abedsay/CreativeHub-BlogPlatform">CreativeHub-BlogPlatform</a></h3>
+                <p>A Web Programming project in which we had to develop a website for a blog system with functionalities for both a regular user and an admin.</p>
+            </div>
+            <div class="project-card">
+                <h3><a href="https://github.com/Abedsay/ChasedByMonsters">ChasedByMonsters</a></h3>
+                <p>A fun and simple game in which the player is being chased by a bunch of monsters.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <form class="contact-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Abdullah. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".section");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    } else {
+                        entry.target.classList.remove("visible");
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+
+</html>
